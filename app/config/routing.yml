@@ -1,3 +1,6 @@
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
 wd_cs_themes_core3rd_party:
     resource: "@WdCsThemesCore3rdPartyBundle/Resources/config/routing.yml"
     prefix:   /
