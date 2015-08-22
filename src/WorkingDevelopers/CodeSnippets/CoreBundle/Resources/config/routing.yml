@@ -1,0 +1,3 @@
+wd_cs_core_homepage:
+    path:     /
+    defaults: { _controller: WdCsCoreBundle:Default:index }

@@ -1,3 +1,11 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+wd_cs_themes_core3rd_party:
+    resource: "@WdCsThemesCore3rdPartyBundle/Resources/config/routing.yml"
+    prefix:   /
+
+wd_cs_themes_core_theme:
+    resource: "@WdCsThemesCoreThemeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+wd_cs_core:
+    resource: "@WdCsCoreBundle/Resources/config/routing.yml"
+    prefix:   /

@@ -9,4 +9,4 @@ Online Code or whatever Snippets Manager
 0. Run `php composer.phar install`
 0. Execute `./SETUP-DEV-ENVIRONMENT.sh`
 0. Run `vagrant up` and wait till finished
-
+0. Navigate in your browser to http://code-snippets.apache2.dev/app_dev.php

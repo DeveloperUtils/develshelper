@@ -1,0 +1,4 @@
+services:
+#    wd_cs_core.example:
+#        class: WorkingDevelopers\CodeSnippets\CoreBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

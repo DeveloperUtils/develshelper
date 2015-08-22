@@ -1,0 +1,3 @@
+wd_cs_themes_core_theme_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Default:index }

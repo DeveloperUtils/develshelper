@@ -1,0 +1,3 @@
+wd_cs_themes_core3rd_party_homepage:
+    path:     /theme/3rdParty/example
+    defaults: { _controller: WdCsThemesCore3rdPartyBundle:Example:index }
