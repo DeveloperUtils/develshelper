@@ -1,3 +1,111 @@
-wd_cs_themes_core_theme_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: WdCsThemesCoreThemeBundle:Default:index }
+wd_cs_themes_core_theme_example_show:
+    path:     /example/{example}
+    requirements:
+        example: .+
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:show }
+
+_wd_cs_themes_core_theme_home:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_dashboard:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_widgets:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_calendar:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_charts_chartjs:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_charts_flot:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_charts_inline:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_charts_morris:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_examples_404:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_examples_500:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_examples_blank:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_examples_invoice:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_examples_invoice-print:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_examples_lockscreen:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_examples_login:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_examples_profile:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_examples_register:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_forms_advanced:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_forms_editors:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_forms_general:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_layout_boxed:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_layout_collapsed-sidebar:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_layout_fixed:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_layout_topnav:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_mailbox_compose:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_mailbox_mailbox:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_mailbox_read-mail:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_tables_data:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_tables_simple:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_ui_buttons:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_ui_general:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_ui_icons:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_ui_modals:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_ui_sliders:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
+_wd_cs_theme_core_example_ui_timeline:
+    path:     /example
+    defaults: { _controller: WdCsThemesCoreThemeBundle:Example:index }
