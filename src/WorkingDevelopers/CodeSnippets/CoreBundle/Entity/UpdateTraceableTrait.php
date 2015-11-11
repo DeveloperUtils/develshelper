@@ -27,14 +27,14 @@ trait UpdateTraceableTrait
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created_at", type="datetimetz")
+     * @ORM\Column(name="created_at", type="datetime")
      */
     protected $createdAt;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="updated_at", type="datetimetz")
+     * @ORM\Column(name="updated_at", type="datetime")
      */
     protected $updatedAt;
 

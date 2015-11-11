@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new WorkingDevelopers\CodeSnippets\CoreBundle\WdCsCoreBundle(),
             new WorkingDevelopers\CodeSnippets\Themes\CoreThemeBundle\WdCsThemesCoreThemeBundle(),
             new WorkingDevelopers\CodeSnippets\Themes\Core3rdPartyBundle\WdCsThemesCore3rdPartyBundle(),
+            new WorkingDevelopers\CodeSnippets\CsDomainBundle\WdCsDomainBundle(),
         );
 
         if (in_array($this->getEnvironment(), array(

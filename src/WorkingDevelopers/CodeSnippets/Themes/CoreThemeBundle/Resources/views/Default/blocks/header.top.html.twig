@@ -204,15 +204,21 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        {% if app.user %}
                         <img src="{{ asset('bundles/wdcsthemescore3rdparty/admin-lte/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
-                        <span class="hidden-xs">Alexander Pierce</span>
+                        <span class="hidden-xs">{{ app.user.username }}</span>
+                        {% else %}
+                            <span class="hidden-xs">Login</span>
+                        {% endif %}
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
                             <img src="{{ asset('bundles/wdcsthemescore3rdparty/admin-lte/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                             <p>
-                                Alexander Pierce - Web Developer
+                                {% if app.user %}
+                                {{ app.user.username }}
+                                {% endif %}
                                 <small>Member since Nov. 2012</small>
                             </p>
                         </li>
@@ -234,7 +240,11 @@
                                 <a href="#" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                {% if app.user %}
+                                <a href="{{ url('fos_user_security_logout') }}" class="btn btn-default btn-flat">Sign out</a>
+                                {% else %}
+                                    <a href="{{ url('fos_user_security_login') }}" class="btn btn-default btn-flat">Sign in</a>
+                                {% endif %}
                             </div>
                         </li>
                     </ul>

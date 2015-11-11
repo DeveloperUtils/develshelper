@@ -1,5 +1,13 @@
+wd_cs_domain:
+    resource: "@WdCsDomainBundle/Resources/config/routing.yml"
+    prefix:   /
+
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+wd_cs_core:
+    resource: "@WdCsCoreBundle/Resources/config/routing.yml"
+    prefix:   /
 
 wd_cs_themes_core3rd_party:
     resource: "@WdCsThemesCore3rdPartyBundle/Resources/config/routing.yml"
@@ -9,6 +17,3 @@ wd_cs_themes_core_theme:
     resource: "@WdCsThemesCoreThemeBundle/Resources/config/routing.yml"
     prefix:   /
 
-wd_cs_core:
-    resource: "@WdCsCoreBundle/Resources/config/routing.yml"
-    prefix:   /

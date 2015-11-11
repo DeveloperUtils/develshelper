@@ -14,8 +14,8 @@ class ExampleController extends Controller
             $example = end($explode);
         }else {
             $folder = '';
-
         }
+        $example = str_ireplace('.html','',$example);
         return $this->render("WdCsThemesCoreThemeBundle:Example{$folder}:{$example}.html.twig");
     }
 
