@@ -1,0 +1,27 @@
+{% extends 'WdCsThemesCoreThemeBundle:Default:base.html.twig' %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block content %}
+
+    {% include 'WdCsThemesCoreThemeBundle:Default/widgets:info-box-small.html.twig'
+    with {
+    'color': 'blue',
+    'text': 'Snippets',
+    'number': '???',
+    'icon': 'files'
+    }
+    %}
+
+    {% include 'WdCsThemesCoreThemeBundle:Default/widgets:info-box-small.html.twig'
+    with {
+    'color': 'green',
+    'text': 'Tags',
+    'number': '???',
+    'icon': 'flag'
+    }
+    %}
+
+{% endblock %}

@@ -51,6 +51,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User extends BaseUser
 {
+    use UpdateTraceableTrait;
+
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")

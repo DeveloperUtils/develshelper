@@ -1,0 +1,18 @@
+{% if not (icon|replace({'-o': ''})) == icon %}
+    icon = icon + '-o
+{% endif %}
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box bg-{{ color }}">
+        <span class="info-box-icon"><i class="fa fa-{{ icon }}"></i></span>
+        <div class="info-box-content">
+            <span class="info-box-text">{{ text }}</span>
+            <span class="info-box-number">{{ number }}</span>
+            <div class="progress">
+                <div class="progress-bar" style="width: {{ progress }}"></div>
+            </div>
+                  <span class="progress-description">
+                    {{ progressDescription }}
+                  </span>
+        </div><!-- /.info-box-content -->
+    </div><!-- /.info-box -->
+</div><!-- /.col -->
