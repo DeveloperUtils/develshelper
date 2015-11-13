@@ -1,7 +1,7 @@
+wd_cs_core_admin_tag:
+    resource: "@WdCsCoreBundle/Resources/config/routing/tag.yml"
+    prefix:   /admin/tag
+
 wd_cs_core_homepage:
     path:     /
     defaults: { _controller: WdCsCoreBundle:Default:index }
-
-wd_cs_core_tag_create:
-    path:     /admin/tag/create
-    defaults: { _controller: WdCsCoreBundle:Tag:addTag }
