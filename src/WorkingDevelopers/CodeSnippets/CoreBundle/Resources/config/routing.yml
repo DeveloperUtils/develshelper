@@ -1,3 +1,7 @@
+wd_cs_core_admin_config:
+    resource: "@WdCsCoreBundle/Resources/config/routing/config.yml"
+    prefix:   /admin/config
+
 wd_cs_core_admin_tag:
     resource: "@WdCsCoreBundle/Resources/config/routing/tag.yml"
     prefix:   /admin/tag

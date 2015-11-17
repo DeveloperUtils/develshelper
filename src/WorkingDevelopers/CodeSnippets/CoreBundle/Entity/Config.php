@@ -67,7 +67,7 @@ class Config
      */
     public function setKeyname($keyname)
     {
-        $this->keyname = $keyname;
+        $this->keyname = strtolower($keyname);
 
         return $this;
     }
