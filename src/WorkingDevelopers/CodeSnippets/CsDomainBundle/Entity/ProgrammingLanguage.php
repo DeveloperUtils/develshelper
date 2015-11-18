@@ -7,8 +7,8 @@
 
 namespace WorkingDevelopers\CodeSnippets\CsDomainBundle\Entity;
 
-use WorkingDevelopers\CodeSnippets\CoreBundle\Entity\UpdateTraceableTrait;
 use Doctrine\ORM\Mapping as ORM;
+use WorkingDevelopers\CodeSnippets\CoreBundle\Entity\UpdateTraceableTrait;
 
 /**
  * Class ProgrammingLanguage
@@ -16,6 +16,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="programming_language")
  * @ORM\Entity()
  * @ORM\HasLifecycleCallbacks
+ *
+ * @ORM\Entity(repositoryClass="\WorkingDevelopers\CodeSnippets\CsDomainBundle\Repository\ProgrammingLanguageRepository")
  *
  * @package WorkingDevelopers\CodeSnippets\CsDomainBundle\Entity
  * @author Christoph Graupner <ch.graupner@workingdeveloper.net>

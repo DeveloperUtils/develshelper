@@ -17,6 +17,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity()
  * @ORM\HasLifecycleCallbacks
  *
+ * @ORM\Entity(repositoryClass="\WorkingDevelopers\CodeSnippets\CoreBundle\Repository\TagRepository")
+ *
  * @package WorkingDevelopers\CodeSnippets\CoreBundle\Entity
  * @author Christoph Graupner <ch.graupner@workingdeveloper.net>
  * @since
@@ -81,24 +83,6 @@ class Tag
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string $name
-     * @return Tag
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-        return $this;
     }
 
     /**
@@ -194,6 +178,24 @@ class Tag
     function __toString()
     {
         return $this->getName();
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     * @return Tag
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+        return $this;
     }
 
 

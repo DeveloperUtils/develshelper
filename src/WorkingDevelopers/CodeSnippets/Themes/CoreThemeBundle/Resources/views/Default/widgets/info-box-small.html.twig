@@ -1,14 +1,20 @@
 {% if not (icon|replace({'-o': ''})) == icon %}
-    icon = icon + '-o
+    icon = icon + '-o'
 {% endif %}
 
 <div class="col-md-3 col-sm-6 col-xs-12">
+    {% if link is defined %}
+    <a href="{{ link }}">
+        {% endif %}
     <div class="info-box">
-        <span class="info-box-icon bg-{{ color }}"><i class="fa fa-{{ icon }}-o"></i></span>
+        <span class="info-box-icon bg-{{ color }}"><i class="fa fa-{{ icon }}"></i></span>
         <div class="info-box-content">
             <span class="info-box-text">{{ text }}</span>
             <span class="info-box-number">{{ number }}</span>
         </div><!-- /.info-box-content -->
     </div><!-- /.info-box -->
+        {% if link is defined %}
+    </a>
+    {% endif %}
 </div><!-- /.col -->
 
