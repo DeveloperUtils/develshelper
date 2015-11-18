@@ -1,3 +1,7 @@
+wd_cs_domain_admin_snippet:
+    resource: "@WdCsDomainBundle/Resources/config/routing/snippet.yml"
+    prefix:   /admin/snippet
+
 wd_cs_domain_admin_author:
     resource: "@WdCsDomainBundle/Resources/config/routing/author.yml"
     prefix:   /admin/author

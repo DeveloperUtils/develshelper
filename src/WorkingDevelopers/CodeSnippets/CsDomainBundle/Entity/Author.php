@@ -66,6 +66,19 @@ class Author
     /**
      * @return string
      */
+    public function getNameCanonical()
+    {
+        return $this->nameCanonical;
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
+    /**
+     * @return string
+     */
     public function getName()
     {
         return $this->name;
@@ -82,11 +95,4 @@ class Author
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getNameCanonical()
-    {
-        return $this->nameCanonical;
-    }
 }

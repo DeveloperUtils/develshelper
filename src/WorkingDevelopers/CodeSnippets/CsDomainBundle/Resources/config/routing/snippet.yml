@@ -1,0 +1,30 @@
+wd_cs_admin_snippet:
+    path:     /
+    defaults: { _controller: "WdCsDomainBundle:Snippet:index" }
+
+wd_cs_admin_snippet_show:
+    path:     /{id}/show
+    defaults: { _controller: "WdCsDomainBundle:Snippet:show" }
+
+wd_cs_admin_snippet_new:
+    path:     /new
+    defaults: { _controller: "WdCsDomainBundle:Snippet:new" }
+
+wd_cs_admin_snippet_create:
+    path:     /create
+    defaults: { _controller: "WdCsDomainBundle:Snippet:create" }
+    methods:  POST
+
+wd_cs_admin_snippet_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "WdCsDomainBundle:Snippet:edit" }
+
+wd_cs_admin_snippet_update:
+    path:     /{id}/update
+    defaults: { _controller: "WdCsDomainBundle:Snippet:update" }
+    methods:  [POST, PUT]
+
+wd_cs_admin_snippet_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "WdCsDomainBundle:Snippet:delete" }
+    methods:  [POST, DELETE]

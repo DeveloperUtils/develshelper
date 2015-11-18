@@ -67,6 +67,19 @@ class ProgrammingLanguage
     /**
      * @return string
      */
+    public function getNameCanonical()
+    {
+        return $this->nameCanonical;
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
+    /**
+     * @return string
+     */
     public function getName()
     {
         return $this->name;
@@ -82,13 +95,4 @@ class ProgrammingLanguage
         $this->nameCanonical = strtolower($this->name);
         return $this;
     }
-
-    /**
-     * @return string
-     */
-    public function getNameCanonical()
-    {
-        return $this->nameCanonical;
-    }
-
 }
