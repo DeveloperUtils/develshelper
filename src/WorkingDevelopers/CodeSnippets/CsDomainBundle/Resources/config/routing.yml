@@ -1,3 +1,7 @@
+wd_cs_domain_admin_programminglanguage:
+    resource: "@WdCsDomainBundle/Resources/config/routing/programminglanguage.yml"
+    prefix:   /admin/programminglanguage
+
 wd_cs_domain_homepage:
     path:     /
     defaults: { _controller: WdCsDomainBundle:Dashboard:index }

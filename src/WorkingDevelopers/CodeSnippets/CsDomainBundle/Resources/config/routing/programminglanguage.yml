@@ -1,0 +1,30 @@
+wd_cs_admin_programminglanguage:
+    path:     /
+    defaults: { _controller: "WdCsDomainBundle:ProgrammingLanguage:index" }
+
+wd_cs_admin_programminglanguage_show:
+    path:     /{id}/show
+    defaults: { _controller: "WdCsDomainBundle:ProgrammingLanguage:show" }
+
+wd_cs_admin_programminglanguage_new:
+    path:     /new
+    defaults: { _controller: "WdCsDomainBundle:ProgrammingLanguage:new" }
+
+wd_cs_admin_programminglanguage_create:
+    path:     /create
+    defaults: { _controller: "WdCsDomainBundle:ProgrammingLanguage:create" }
+    methods:  POST
+
+wd_cs_admin_programminglanguage_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "WdCsDomainBundle:ProgrammingLanguage:edit" }
+
+wd_cs_admin_programminglanguage_update:
+    path:     /{id}/update
+    defaults: { _controller: "WdCsDomainBundle:ProgrammingLanguage:update" }
+    methods:  [POST, PUT]
+
+wd_cs_admin_programminglanguage_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "WdCsDomainBundle:ProgrammingLanguage:delete" }
+    methods:  [POST, DELETE]
