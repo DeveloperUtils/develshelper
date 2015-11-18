@@ -13,8 +13,7 @@
     'number': count.snippets,
     'icon': 'file-code-o',
     'link': path('wd_cs_admin_tag')
-    }
-    %}
+    } %}
 
     {% include 'WdCsThemesCoreThemeBundle:Default/widgets:info-box-small.html.twig'
     with {
@@ -23,15 +22,15 @@
     'number': count.tags,
     'icon': 'tags',
     'link': path('wd_cs_admin_tag')
-    }
-    %}
+    } %}
 
     {% include 'WdCsThemesCoreThemeBundle:Default/widgets:info-box-small.html.twig'
     with {
     'color': 'green',
     'text': 'Authors',
     'number': count.authors,
-    'icon': 'users'
+    'icon': 'users',
+    'link': path('wd_cs_admin_author')
     } %}
 
     {% include 'WdCsThemesCoreThemeBundle:Default/widgets:info-box-small.html.twig'

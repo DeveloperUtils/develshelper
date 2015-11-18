@@ -33,4 +33,60 @@ class Author
      */
     protected $id;
 
+    /**
+     * @ORM\Column(name="name", type="string", length=100)
+     * @var string
+     */
+    protected $name;
+
+    /**
+     * @ORM\Column(name="name_canonical", type="string", length=100)
+     * @var string
+     */
+    protected $nameCanonical;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     * @return ProgrammingLanguage
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     * @return ProgrammingLanguage
+     */
+    public function setName($name)
+    {
+        $this->name = trim($name);
+        $this->nameCanonical = strtolower($this->name);
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNameCanonical()
+    {
+        return $this->nameCanonical;
+    }
 }
