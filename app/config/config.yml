@@ -7,6 +7,11 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    knp_menu.renderer.twig.options:
+        currentClass: 'active'
+        ancestorClass: 'active'
+        branch_class: 'treeview'
+        template: 'WdCsThemesCoreThemeBundle:Menu:knp_menu.html.twig'
 
 framework:
     #esi:             ~
@@ -96,3 +101,12 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: WorkingDevelopers\CodeSnippets\CoreBundle\Entity\User
+
+knp_menu:
+    # use "twig: false" to disable the Twig extension and the TwigRenderer
+    twig:
+        template: knp_menu.html.twig
+    #  if true, enables the helper for PHP templates
+    templating: false
+    # the renderer to use, list is also available by default
+    default_renderer: twig

@@ -29,6 +29,7 @@ class ConfigController extends Controller
             'entities' => $entities,
         ));
     }
+
     /**
      * Creates a new Config entity.
      *
@@ -36,7 +37,7 @@ class ConfigController extends Controller
     public function createAction(Request $request)
     {
         $entity = new Config();
-        $form = $this->createCreateForm($entity);
+        $form   = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
@@ -49,7 +50,7 @@ class ConfigController extends Controller
 
         return $this->render('WdCsCoreBundle:Config:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ));
     }
 
@@ -104,7 +105,7 @@ class ConfigController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('WdCsCoreBundle:Config:show.html.twig', array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -123,7 +124,7 @@ class ConfigController extends Controller
             throw $this->createNotFoundException('Unable to find Config entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
+        $editForm   = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('WdCsCoreBundle:Config:edit.html.twig', array(
@@ -134,12 +135,12 @@ class ConfigController extends Controller
     }
 
     /**
-    * Creates a form to edit a Config entity.
-    *
-    * @param Config $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to edit a Config entity.
+     *
+     * @param Config $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createEditForm(Config $entity)
     {
         $form = $this->createForm(new ConfigType(), $entity, array(
@@ -151,6 +152,7 @@ class ConfigController extends Controller
 
         return $form;
     }
+
     /**
      * Edits an existing Config entity.
      *
@@ -166,7 +168,7 @@ class ConfigController extends Controller
         }
 
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createEditForm($entity);
+        $editForm   = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
@@ -181,6 +183,7 @@ class ConfigController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
+
     /**
      * Deletes a Config entity.
      *
@@ -191,7 +194,7 @@ class ConfigController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+            $em     = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('WdCsCoreBundle:Config')->find($id);
 
             if (!$entity) {
@@ -215,10 +218,9 @@ class ConfigController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('wd_cs_admin_config_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
-        ;
+                    ->setAction($this->generateUrl('wd_cs_admin_config_delete', array('id' => $id)))
+                    ->setMethod('DELETE')
+                    ->add('submit', 'submit', array('label' => 'Delete'))
+                    ->getForm();
     }
 }
