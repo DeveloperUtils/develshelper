@@ -5,6 +5,7 @@ namespace WorkingDevelopers\CodeSnippets\CsDomainBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use WorkingDevelopers\CodeSnippets\CoreBundle\Form\SimpleTagType;
 
 class SnippetType extends AbstractType
 {
@@ -18,8 +19,16 @@ class SnippetType extends AbstractType
             ->add('snippet')
             ->add('language')
             ->add('author')
-            ->add('tags');
+            ->add('tags', 'collection', //CollectionType::class,
+                array(
+                    'type' => new SimpleTagType(),
+                    'allow_add' => true,
+                    'by_reference' => false,
+                    'allow_delete' => true,
+                )
+            );
     }
+
 
     /**
      * @param OptionsResolverInterface $resolver

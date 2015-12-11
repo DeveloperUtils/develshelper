@@ -42,6 +42,12 @@ class Tag
     protected $name;
 
     /**
+     * @ORM\Column(name="name_canonical", type="string", length=100)
+     * @var string
+     */
+    protected $nameCanonical;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=255, nullable=true)
@@ -53,7 +59,7 @@ class Tag
      *
      * @ORM\Column(name="active", type="boolean")
      */
-    protected $active;
+    protected $active = true;
 
     /**
      * @var integer
@@ -73,9 +79,17 @@ class Tag
      * @var Tag
      *
      * @ORM\OneToOne(targetEntity="Tag")
-     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id", nullable=true)
      */
     protected $parent;
+
+    /**
+     * Tag constructor.
+     */
+    public function __construct()
+    {
+
+    }
 
     /**
      * @return mixed
@@ -175,7 +189,7 @@ class Tag
         return $this;
     }
 
-    function __toString()
+    public function __toString()
     {
         return $this->getName();
     }
@@ -194,9 +208,16 @@ class Tag
      */
     public function setName($name)
     {
-        $this->name = $name;
+        $this->nameCanonical = strtolower($name);
+        $this->name          = $name;
         return $this;
     }
 
-
+    /**
+     * @return string
+     */
+    public function getNameCanonical()
+    {
+        return $this->nameCanonical;
+    }
 }

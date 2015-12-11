@@ -3,7 +3,22 @@
 {% block content -%}
     <h1>Snippet creation</h1>
 
-    {{ form(form) }}
+    {{ form_start(form) }}
+    {# render the task's only field: description #}
+    {{ form_row(form.snippet) }}
+    {{ form_row(form.language) }}
+    {{ form_row(form.author) }}
+
+    {#{{ form(form) }}#}
+
+    <h3>Tags</h3>
+    <ul class="tags" data-prototype="{{ form_widget(form.tags.vars.prototype)|e }}">
+        {# iterate over each existing tag and render its only field: name #}
+        {% for tag in form.tags %}
+            <li>{{ form_row(tag.name) }}</li>
+        {% endfor %}
+    </ul>
+    {{ form_end(form) }}
 
     <ul class="record_actions">
         <li>
@@ -13,3 +28,12 @@
         </li>
     </ul>
 {% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/wdcsdomain/js/tag-edit.js') }}"></script>
+    <script>
+        jQuery(document).ready(function() {
+            TagTag.addToJQuery();
+        });
+    </script>
+{% endblock  %}

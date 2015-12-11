@@ -5,6 +5,7 @@ namespace WorkingDevelopers\CodeSnippets\CsDomainBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+use WorkingDevelopers\CodeSnippets\CoreBundle\Entity\Tag;
 use WorkingDevelopers\CodeSnippets\CsDomainBundle\Entity\Snippet;
 use WorkingDevelopers\CodeSnippets\CsDomainBundle\Form\SnippetType;
 
@@ -80,6 +81,9 @@ class SnippetController extends Controller
     public function newAction()
     {
         $entity = new Snippet();
+        $tag1 = new Tag();
+        $tag1->setName('test');
+        $entity->addTag($tag1);
         $form = $this->createCreateForm($entity);
 
         return $this->render('WdCsDomainBundle:Snippet:new.html.twig', array(

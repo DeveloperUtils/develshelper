@@ -7,6 +7,7 @@
 
 namespace WorkingDevelopers\CodeSnippets\CsDomainBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use WorkingDevelopers\CodeSnippets\CoreBundle\Entity\Tag;
 use WorkingDevelopers\CodeSnippets\CoreBundle\Entity\UpdateTraceableTrait;
@@ -42,7 +43,7 @@ class Snippet
     protected $snippet;
 
     /**
-     * @ORM\ManyToMany(targetEntity="ProgrammingLanguage", inversedBy="fk_programming_language")
+     * @ORM\ManyToMany(targetEntity="ProgrammingLanguage",cascade={"persist"})
      * @ORM\JoinTable(name="snippets_languages",
      *      joinColumns={@ORM\JoinColumn(name="fk_snippet", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="fk_programming_language", referencedColumnName="id")}
@@ -59,7 +60,7 @@ class Snippet
     protected $author;
 
     /**
-     * @ORM\ManyToMany(targetEntity="\WorkingDevelopers\CodeSnippets\CoreBundle\Entity\Tag", inversedBy="fk_tag")
+     * @ORM\ManyToMany(targetEntity="\WorkingDevelopers\CodeSnippets\CoreBundle\Entity\Tag",cascade={"persist"})
      * @ORM\JoinTable(name="snippet_tags",
      *      joinColumns={@ORM\JoinColumn(name="fk_snippet", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="fk_tag", referencedColumnName="id")}
@@ -67,6 +68,16 @@ class Snippet
      * @var Tag
      */
     protected $tags;
+
+    /**
+     * Snippet constructor.
+     */
+    public function __construct()
+    {
+        $this->tags = new ArrayCollection();
+        $this->language = new ArrayCollection();
+    }
+
 
     /**
      * @return string
@@ -148,5 +159,15 @@ class Snippet
         return $this->id;
     }
 
-    
+    public function addTag(Tag $tag1)
+    {
+
+        $this->tags->add($tag1);
+    }
+
+    public function removeTag(Tag $tag)
+    {
+        $this->tags->remove($tag);
+    }
+
 }
