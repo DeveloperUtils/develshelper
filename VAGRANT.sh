@@ -17,16 +17,23 @@ function checkout_submodule() {
 }
 
 function setup_vagrant() {
-    . "$SCRIPT_DIR/tools/vagrant/linux/functions.sh"
+    . "${SCRIPT_DIR}/tools/vagrant/linux/functions.sh"
 
-    $DIFF_TOOL -Nr --exclude='*id_rsa*' "$SCRIPT_DIR/${VAGRANT_FILE_PATH}/puphpet/" "$SETUP_DIR/puphpet/"
+    ${DIFF_TOOL} -Nr --exclude='*id_rsa*' "${SCRIPT_DIR}/${VAGRANT_FILE_PATH}/puphpet/" "${SETUP_DIR}/puphpet/"
     NEW=$?
 
     if [[ ${NEW} -gt 0 ]]; then
-        rsync -av --delete --exclude=files/dot/ssh/ "$SCRIPT_DIR/${VAGRANT_FILE_PATH}/puphpet/" "$SETUP_DIR/puphpet/"
-        rsync -av "$SCRIPT_DIR/${VAGRANT_FILE_PATH}/puphpet/files/dot/ssh/" "$SETUP_DIR/puphpet/files/dot/ssh/"
+        log RSYNC "${SCRIPT_DIR}/${VAGRANT_FILE_PATH}/puphpet/ -> ${SETUP_DIR}/puphpet/"
+        rsync -av --delete --exclude=files/dot/ssh/ "$SCRIPT_DIR/${VAGRANT_FILE_PATH}/puphpet/" "${SETUP_DIR}/puphpet/"
+        log RSYNC-DONE "${SCRIPT_DIR}/${VAGRANT_FILE_PATH}/puphpet/ -> ${SETUP_DIR}/puphpet/"
+
+        log RSYNC "${SCRIPT_DIR}/${VAGRANT_FILE_PATH}/puphpet/files/dot/ssh/ -> ${SETUP_DIR}/puphpet/files/dot/ssh/"
+        rsync -av "${SCRIPT_DIR}/${VAGRANT_FILE_PATH}/puphpet/files/dot/ssh/" "${SETUP_DIR}/puphpet/files/dot/ssh/"
+        log RSYNC-DONE "${SCRIPT_DIR}/${VAGRANT_FILE_PATH}/puphpet/ -> ${SETUP_DIR}/puphpet/"
+
+        log COPY "$SCRIPT_DIR/${VAGRANT_FILE_PATH}/Vagrantfile -> $(pwd)"
         cp "$SCRIPT_DIR/${VAGRANT_FILE_PATH}/Vagrantfile" ./
-        log DONE "copying from $SCRIPT_DIR/${VAGRANT_FILE_PATH}"
+        log COPY-DONE "$SCRIPT_DIR/${VAGRANT_FILE_PATH}/Vagrantfile -> $(pwd)"
     else
         log DONE "no changes detected -> nothing to do"
     fi
