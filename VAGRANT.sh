@@ -46,7 +46,7 @@ function set_file_permissions() {
 	sudo chgrp -R 33 ./*
 }
 
-if [[ ! -f tools/vagrant/LICENSE ]]; then
+if [[ ! -f tools/vagrant/README.md ]]; then
     checkout_submodule
 fi
 
