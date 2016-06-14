@@ -4,9 +4,9 @@
 parameters:
     database_host:      127.0.0.1
     database_port:      ~
-    database_name:      cs_devdb
-    database_user:      cs_dbu
-    database_password:  csnippet
+    database_name:      dh_devdb
+    database_user:      dh_dbu
+    database_password:  devel
 
     # You should uncomment this if you want use pdo_sqlite
     # database_path: "%kernel.root_dir%/data.db3"
