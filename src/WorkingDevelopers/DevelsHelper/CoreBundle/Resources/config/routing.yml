@@ -1,0 +1,11 @@
+dh_core_admin_config:
+    resource: "@DhCoreBundle/Resources/config/routing/config.yml"
+    prefix:   /admin/config
+
+dh_core_admin_tag:
+    resource: "@DhCoreBundle/Resources/config/routing/tag.yml"
+    prefix:   /admin/tag
+
+dh_core_homepage:
+    path:     /
+    defaults: { _controller: DhCoreBundle:Default:index }

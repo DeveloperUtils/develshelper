@@ -3,6 +3,7 @@
 namespace WorkingDevelopers\CodeSnippets\CsDomainBundle\Controller;
 
 use Symfony\Component\Form\Extension\Core\Type\ButtonType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -46,7 +47,7 @@ class AuthorController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('wd_cs_admin_author_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('dh_admin_author_show', array('id' => $entity->getId())));
         }
 
         return $this->render('WdCsDomainBundle:Author:new.html.twig', array(
@@ -65,11 +66,11 @@ class AuthorController extends Controller
     private function createCreateForm(Author $entity)
     {
         $form = $this->createForm(AuthorType::class, $entity, array(
-            'action' => $this->generateUrl('wd_cs_admin_author_create'),
+            'action' => $this->generateUrl('dh_admin_author_create'),
             'method' => 'POST',
         ));
 
-        $form->add('submit', ButtonType::class, array('label' => 'Create'));
+        $form->add('submit', SubmitType::class, array('label' => 'Create'));
 
         return $form;
     }
@@ -121,9 +122,9 @@ class AuthorController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('wd_cs_admin_author_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('dh_admin_author_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', ButtonType::class, array('label' => 'Delete'))
+            ->add('submit', SubmitType::class, array('label' => 'Delete'))
             ->getForm();
     }
 
@@ -161,11 +162,11 @@ class AuthorController extends Controller
     private function createEditForm(Author $entity)
     {
         $form = $this->createForm(AuthorType::class, $entity, array(
-            'action' => $this->generateUrl('wd_cs_admin_author_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('dh_admin_author_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', ButtonType::class, array('label' => 'Update'));
+        $form->add('submit', SubmitType::class, array('label' => 'Update'));
 
         return $form;
     }
@@ -191,7 +192,7 @@ class AuthorController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('wd_cs_admin_author_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('dh_admin_author_edit', array('id' => $id)));
         }
 
         return $this->render('WdCsDomainBundle:Author:edit.html.twig', array(
@@ -222,6 +223,6 @@ class AuthorController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('wd_cs_admin_author'));
+        return $this->redirect($this->generateUrl('dh_admin_author'));
     }
 }

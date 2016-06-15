@@ -1,0 +1,30 @@
+dh_admin_config:
+    path:     /
+    defaults: { _controller: "DhCoreBundle:Config:index" }
+
+dh_admin_config_show:
+    path:     /{id}/show
+    defaults: { _controller: "DhCoreBundle:Config:show" }
+
+dh_admin_config_new:
+    path:     /new
+    defaults: { _controller: "DhCoreBundle:Config:new" }
+
+dh_admin_config_create:
+    path:     /create
+    defaults: { _controller: "DhCoreBundle:Config:create" }
+    methods:  POST
+
+dh_admin_config_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DhCoreBundle:Config:edit" }
+
+dh_admin_config_update:
+    path:     /{id}/update
+    defaults: { _controller: "DhCoreBundle:Config:update" }
+    methods:  [POST, PUT]
+
+dh_admin_config_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DhCoreBundle:Config:delete" }
+    methods:  [POST, DELETE]

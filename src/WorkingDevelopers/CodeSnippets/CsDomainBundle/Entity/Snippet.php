@@ -9,8 +9,8 @@ namespace WorkingDevelopers\CodeSnippets\CsDomainBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use WorkingDevelopers\CodeSnippets\CoreBundle\Entity\Tag;
-use WorkingDevelopers\CodeSnippets\CoreBundle\Entity\UpdateTraceableTrait;
+use WorkingDevelopers\DevelsHelper\CoreBundle\Entity\Tag;
+use WorkingDevelopers\DevelsHelper\CoreBundle\Entity\UpdateTraceableTrait;
 
 /**
  * Class Snippet
@@ -60,7 +60,7 @@ class Snippet
     protected $author;
 
     /**
-     * @ORM\ManyToMany(targetEntity="\WorkingDevelopers\CodeSnippets\CoreBundle\Entity\Tag",cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="\WorkingDevelopers\DevelsHelper\CoreBundle\Entity\Tag",cascade={"persist"})
      * @ORM\JoinTable(name="snippet_tags",
      *      joinColumns={@ORM\JoinColumn(name="fk_snippet", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="fk_tag", referencedColumnName="id")}

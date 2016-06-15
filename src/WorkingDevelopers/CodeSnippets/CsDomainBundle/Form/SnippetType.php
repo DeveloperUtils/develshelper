@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use WorkingDevelopers\CodeSnippets\CoreBundle\Form\SimpleTagType;
+use WorkingDevelopers\DevelsHelper\CoreBundle\Form\SimpleTagType;
 use WorkingDevelopers\CodeSnippets\CsDomainBundle\Entity\Snippet;
 
 class SnippetType extends AbstractType

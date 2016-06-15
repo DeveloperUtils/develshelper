@@ -1,0 +1,30 @@
+dh_admin_tag:
+    path:     /
+    defaults: { _controller: "DhCoreBundle:Tag:index" }
+
+dh_admin_tag_show:
+    path:     /{id}/show
+    defaults: { _controller: "DhCoreBundle:Tag:show" }
+
+dh_admin_tag_new:
+    path:     /new
+    defaults: { _controller: "DhCoreBundle:Tag:new" }
+
+dh_admin_tag_create:
+    path:     /create
+    defaults: { _controller: "DhCoreBundle:Tag:create" }
+    methods:  POST
+
+dh_admin_tag_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DhCoreBundle:Tag:edit" }
+
+dh_admin_tag_update:
+    path:     /{id}/update
+    defaults: { _controller: "DhCoreBundle:Tag:update" }
+    methods:  [POST, PUT]
+
+dh_admin_tag_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DhCoreBundle:Tag:delete" }
+    methods:  [POST, DELETE]

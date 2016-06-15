@@ -1,4 +1,4 @@
-{% extends 'WdCsThemesCoreThemeBundle:Default:base.html.twig' %}
+{% extends 'DhThemesCoreThemeBundle:Default:base.html.twig' %}
 
 {% block title %}
     Dashboard
@@ -6,7 +6,7 @@
 
 {% block content %}
 
-    {% include 'WdCsThemesCoreThemeBundle:Default/widgets:info-box-small.html.twig'
+    {% include 'DhThemesCoreThemeBundle:Default/widgets:info-box-small.html.twig'
     with {
     'color': 'blue',
     'text': 'Snippets',
@@ -15,25 +15,25 @@
     'link': path('wd_cs_admin_snippet')
     } %}
 
-    {% include 'WdCsThemesCoreThemeBundle:Default/widgets:info-box-small.html.twig'
+    {% include 'DhThemesCoreThemeBundle:Default/widgets:info-box-small.html.twig'
     with {
     'color': 'yellow',
     'text': 'Tags',
     'number': count.tags,
     'icon': 'tags',
-    'link': path('wd_cs_admin_tag')
+    'link': path('dh_admin_tag')
     } %}
 
-    {% include 'WdCsThemesCoreThemeBundle:Default/widgets:info-box-small.html.twig'
+    {% include 'DhThemesCoreThemeBundle:Default/widgets:info-box-small.html.twig'
     with {
     'color': 'green',
     'text': 'Authors',
     'number': count.authors,
     'icon': 'users',
-    'link': path('wd_cs_admin_author')
+    'link': path('dh_admin_author')
     } %}
 
-    {% include 'WdCsThemesCoreThemeBundle:Default/widgets:info-box-small.html.twig'
+    {% include 'DhThemesCoreThemeBundle:Default/widgets:info-box-small.html.twig'
     with {
     'color': 'orange',
     'text': 'Programming Languages',

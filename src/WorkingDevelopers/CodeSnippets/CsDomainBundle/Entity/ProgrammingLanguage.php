@@ -8,7 +8,7 @@
 namespace WorkingDevelopers\CodeSnippets\CsDomainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use WorkingDevelopers\CodeSnippets\CoreBundle\Entity\UpdateTraceableTrait;
+use WorkingDevelopers\DevelsHelper\CoreBundle\Entity\UpdateTraceableTrait;
 
 /**
  * Class ProgrammingLanguage

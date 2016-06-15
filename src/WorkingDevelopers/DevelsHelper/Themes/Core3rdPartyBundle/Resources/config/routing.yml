@@ -1,0 +1,3 @@
+dh_themes_core3rd_party_homepage:
+    path:     /theme/3rdParty/example
+    defaults: { _controller: DhThemesCore3rdPartyBundle:Example:index }

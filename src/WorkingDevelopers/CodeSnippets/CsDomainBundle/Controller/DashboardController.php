@@ -3,7 +3,7 @@
 namespace WorkingDevelopers\CodeSnippets\CsDomainBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use WorkingDevelopers\CodeSnippets\CoreBundle\Entity\Tag;
+use WorkingDevelopers\DevelsHelper\CoreBundle\Entity\Tag;
 use WorkingDevelopers\CodeSnippets\CsDomainBundle\Entity\Author;
 use WorkingDevelopers\CodeSnippets\CsDomainBundle\Entity\ProgrammingLanguage;
 use WorkingDevelopers\CodeSnippets\CsDomainBundle\Entity\Snippet;

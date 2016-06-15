@@ -18,9 +18,9 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-            new WorkingDevelopers\CodeSnippets\CoreBundle\WdCsCoreBundle(),
-            new WorkingDevelopers\CodeSnippets\Themes\CoreThemeBundle\WdCsThemesCoreThemeBundle(),
-            new WorkingDevelopers\CodeSnippets\Themes\Core3rdPartyBundle\WdCsThemesCore3rdPartyBundle(),
+            new WorkingDevelopers\DevelsHelper\CoreBundle\DhCoreBundle(),
+            new WorkingDevelopers\DevelsHelper\Themes\CoreThemeBundle\DhThemesCoreThemeBundle(),
+            new WorkingDevelopers\DevelsHelper\Themes\Core3rdPartyBundle\DhThemesCore3rdPartyBundle(),
             new WorkingDevelopers\CodeSnippets\CsDomainBundle\WdCsDomainBundle(),
         );
 

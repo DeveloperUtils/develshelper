@@ -3,10 +3,11 @@
 namespace WorkingDevelopers\CodeSnippets\CsDomainBundle\Controller;
 
 use Symfony\Component\Form\Extension\Core\Type\ButtonType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use WorkingDevelopers\CodeSnippets\CoreBundle\Entity\Tag;
+use WorkingDevelopers\DevelsHelper\CoreBundle\Entity\Tag;
 use WorkingDevelopers\CodeSnippets\CsDomainBundle\Entity\Snippet;
 use WorkingDevelopers\CodeSnippets\CsDomainBundle\Form\SnippetType;
 
@@ -70,7 +71,7 @@ class SnippetController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', ButtonType::class, array('label' => 'Create'));
+        $form->add('submit', SubmitType::class, array('label' => 'Create'));
 
         return $form;
     }
@@ -127,7 +128,7 @@ class SnippetController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('wd_cs_admin_snippet_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', ButtonType::class, array('label' => 'Delete'))
+            ->add('submit', SubmitType::class, array('label' => 'Delete'))
             ->getForm();
     }
 
@@ -169,7 +170,7 @@ class SnippetController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', ButtonType::class, array('label' => 'Update'));
+        $form->add('submit', SubmitType::class, array('label' => 'Update'));
 
         return $form;
     }
