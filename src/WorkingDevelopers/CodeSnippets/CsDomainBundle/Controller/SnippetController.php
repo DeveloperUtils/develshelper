@@ -2,6 +2,7 @@
 
 namespace WorkingDevelopers\CodeSnippets\CsDomainBundle\Controller;
 
+use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -64,12 +65,12 @@ class SnippetController extends Controller
      */
     private function createCreateForm(Snippet $entity)
     {
-        $form = $this->createForm(new SnippetType(), $entity, array(
+        $form = $this->createForm(SnippetType::class, $entity, array(
             'action' => $this->generateUrl('wd_cs_admin_snippet_create'),
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', ButtonType::class, array('label' => 'Create'));
 
         return $form;
     }
@@ -126,7 +127,7 @@ class SnippetController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('wd_cs_admin_snippet_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', ButtonType::class, array('label' => 'Delete'))
             ->getForm();
     }
 
@@ -163,12 +164,12 @@ class SnippetController extends Controller
      */
     private function createEditForm(Snippet $entity)
     {
-        $form = $this->createForm(new SnippetType(), $entity, array(
+        $form = $this->createForm(SnippetType::class, $entity, array(
             'action' => $this->generateUrl('wd_cs_admin_snippet_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', ButtonType::class, array('label' => 'Update'));
 
         return $form;
     }

@@ -2,6 +2,7 @@
 
 namespace WorkingDevelopers\CodeSnippets\CsDomainBundle\Controller;
 
+use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -63,12 +64,12 @@ class ProgrammingLanguageController extends Controller
      */
     private function createCreateForm(ProgrammingLanguage $entity)
     {
-        $form = $this->createForm(new ProgrammingLanguageType(), $entity, array(
+        $form = $this->createForm(ProgrammingLanguageType::class, $entity, array(
             'action' => $this->generateUrl('wd_cs_admin_programminglanguage_create'),
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', ButtonType::class, array('label' => 'Create'));
 
         return $form;
     }
@@ -122,7 +123,7 @@ class ProgrammingLanguageController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('wd_cs_admin_programminglanguage_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', ButtonType::class, array('label' => 'Delete'))
             ->getForm();
     }
 
@@ -159,12 +160,12 @@ class ProgrammingLanguageController extends Controller
      */
     private function createEditForm(ProgrammingLanguage $entity)
     {
-        $form = $this->createForm(new ProgrammingLanguageType(), $entity, array(
+        $form = $this->createForm(ProgrammingLanguageType::class, $entity, array(
             'action' => $this->generateUrl('wd_cs_admin_programminglanguage_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', ButtonType::class, array('label' => 'Update'));
 
         return $form;
     }

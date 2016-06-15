@@ -4,7 +4,7 @@ namespace WorkingDevelopers\CodeSnippets\Themes\Core3rdPartyBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class ExampleController extends Controller
 {
     public function indexAction()
     {

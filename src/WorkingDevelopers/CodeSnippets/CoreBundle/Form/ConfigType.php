@@ -4,7 +4,9 @@ namespace WorkingDevelopers\CodeSnippets\CoreBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use WorkingDevelopers\CodeSnippets\CoreBundle\Entity\Config;
 
 class ConfigType extends AbstractType
 {
@@ -19,14 +21,11 @@ class ConfigType extends AbstractType
             ->add('value')
         ;
     }
-    
-    /**
-     * @param OptionsResolverInterface $resolver
-     */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'WorkingDevelopers\CodeSnippets\CoreBundle\Entity\Config'
+            'data_class' => Config::class
         ));
     }
 

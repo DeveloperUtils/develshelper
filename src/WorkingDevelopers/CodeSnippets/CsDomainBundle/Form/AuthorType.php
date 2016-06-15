@@ -4,7 +4,8 @@ namespace WorkingDevelopers\CodeSnippets\CsDomainBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use WorkingDevelopers\CodeSnippets\CsDomainBundle\Entity\Author;
 
 class AuthorType extends AbstractType
 {
@@ -18,13 +19,10 @@ class AuthorType extends AbstractType
             ->add('name');
     }
 
-    /**
-     * @param OptionsResolverInterface $resolver
-     */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'WorkingDevelopers\CodeSnippets\CsDomainBundle\Entity\Author'
+            'data_class' => Author::class
         ));
     }
 

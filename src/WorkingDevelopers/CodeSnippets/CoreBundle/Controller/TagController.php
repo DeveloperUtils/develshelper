@@ -2,6 +2,7 @@
 
 namespace WorkingDevelopers\CodeSnippets\CoreBundle\Controller;
 
+use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -62,12 +63,12 @@ class TagController extends Controller
      */
     private function createCreateForm(Tag $entity)
     {
-        $form = $this->createForm(new TagType(), $entity, array(
+        $form = $this->createForm( TagType::class, $entity, array(
             'action' => $this->generateUrl('wd_cs_admin_tag_create'),
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', ButtonType::class, array('label' => 'Create'));
 
         return $form;
     }

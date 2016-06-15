@@ -3,15 +3,17 @@
 namespace WorkingDevelopers\CodeSnippets\CsDomainBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use WorkingDevelopers\CodeSnippets\CoreBundle\Form\SimpleTagType;
+use WorkingDevelopers\CodeSnippets\CsDomainBundle\Entity\Snippet;
 
 class SnippetType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -19,24 +21,21 @@ class SnippetType extends AbstractType
             ->add('snippet')
             ->add('language')
             ->add('author')
-            ->add('tags', 'collection', //CollectionType::class,
+            ->add('tags', CollectionType::class,
                 array(
-                    'type' => new SimpleTagType(),
+                    'entry_type' => SimpleTagType::class,
                     'allow_add' => true,
                     'by_reference' => false,
                     'allow_delete' => true,
+                    'block_name' => 'Tag'
                 )
             );
     }
 
-
-    /**
-     * @param OptionsResolverInterface $resolver
-     */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'WorkingDevelopers\CodeSnippets\CsDomainBundle\Entity\Snippet'
+            'data_class' => Snippet::class
         ));
     }
 

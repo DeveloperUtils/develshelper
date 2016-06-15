@@ -4,7 +4,10 @@ namespace WorkingDevelopers\CodeSnippets\CoreBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormTypeInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use WorkingDevelopers\CodeSnippets\CoreBundle\Entity\Tag;
 
 class TagType extends AbstractType
 {
@@ -21,14 +24,11 @@ class TagType extends AbstractType
             ->add('parent')
         ;
     }
-    
-    /**
-     * @param OptionsResolverInterface $resolver
-     */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'WorkingDevelopers\CodeSnippets\CoreBundle\Entity\Tag'
+            'data_class' => Tag::class
         ));
     }
 

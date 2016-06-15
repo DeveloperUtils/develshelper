@@ -2,6 +2,7 @@
 
 namespace WorkingDevelopers\CodeSnippets\CoreBundle\Controller;
 
+use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -63,12 +64,12 @@ class ConfigController extends Controller
      */
     private function createCreateForm(Config $entity)
     {
-        $form = $this->createForm(new ConfigType(), $entity, array(
+        $form = $this->createForm(ConfigType::class, $entity, array(
             'action' => $this->generateUrl('wd_cs_admin_config_create'),
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', ButtonType::class, array('label' => 'Create'));
 
         return $form;
     }
