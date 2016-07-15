@@ -1,47 +1,67 @@
 {% extends '::base.html.twig' %}
 
-{% block content -%}
-    <h1>Author list</h1>
+{% block title %}
+  Author list
+{% endblock %}
 
-    <table class="records_list">
-        <thead>
-        <tr>
+{% block content -%}
+  <div class="box">
+    <div class="box-header">
+      <h3 class="box-title">Author list</h3>
+      <div class="box-tools">
+        <div class="input-group" style="width: 150px;">
+          <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
+          <div class="input-group-btn">
+            <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.box-header -->
+
+    <div class="box-body table-responsive no-padding">
+      <table class="table table-hover records_list">
+
+        <table class="records_list">
+          <thead>
+          <tr>
             <th>Id</th>
             <th>Name</th>
             <th>Namecanonical</th>
             <th>Createdat</th>
             <th>Updatedat</th>
             <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
+          </tr>
+          </thead>
+          <tbody>
+          {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('dh_admin_author_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.name }}</td>
-                <td>{{ entity.nameCanonical }}</td>
-                <td>{% if entity.createdAt %}{{ entity.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('dh_admin_author_show', { 'id': entity.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('dh_admin_author_edit', { 'id': entity.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
+              <td><a href="{{ path('dh_admin_author_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+              <td>{{ entity.name }}</td>
+              <td>{{ entity.nameCanonical }}</td>
+              <td>{% if entity.createdAt %}{{ entity.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+              <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="{{ path('dh_admin_author_show', { 'id': entity.id }) }}">show</a>
+                  </li>
+                  <li>
+                    <a href="{{ path('dh_admin_author_edit', { 'id': entity.id }) }}">edit</a>
+                  </li>
+                </ul>
+              </td>
             </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+          {% endfor %}
+          </tbody>
+        </table>
+    </div><!-- /.box-body -->
+  </div><!-- /.box -->
 
-    <ul>
-        <li>
-            <a href="{{ path('dh_admin_author_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+  <ul>
+    <li>
+      <a href="{{ path('dh_admin_author_new') }}">
+        Create a new entry
+      </a>
+    </li>
+  </ul>
 {% endblock %}
