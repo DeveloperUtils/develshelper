@@ -31,7 +31,8 @@
         "symfony/assetic-bundle": "^2.8",
         "doctrine/doctrine-fixtures-bundle": "*",
         "friendsofsymfony/user-bundle": "~2@dev",
-        "knplabs/knp-menu-bundle": "~2"
+        "knplabs/knp-menu-bundle": "~2",
+        "doctrine/doctrine-migrations-bundle": "^1.1"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
